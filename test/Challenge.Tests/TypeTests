@@ -1,0 +1,23 @@
+using System;
+using ChallengeApp;
+using Xunit;
+
+namespace Challenge.Tests
+{
+    public class TypeTests
+    {
+        [Fact]
+        public void GetEmployeeReturnsDirrefentsObjects()
+        {
+            var emp1 = GetEmployee("Paweł");
+            var emp2 = GetEmployee("Michał");
+
+            Assert.Equal("Paweł", emp1.Name);
+            Assert.Equal("Michał", emp2.Name);
+        }
+        private Employee GetEmployee(string name)
+        {
+            return new Employee(name);
+        }
+    }
+}
